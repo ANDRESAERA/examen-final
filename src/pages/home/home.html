@@ -1,14 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+      <ion-title style="background-color: #DBE8DC">
+          Ecología Guadalajara
+        </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="getpicture()" style="color: #243E36">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding  style="background-color: #5B6C5D">
+ 
+  <ion-card *ngFor= 'let item of items' style="background-color: #DBE8DC">
+    <img src={{item.url}}>
+    <ion-card-content>
+      <p>Tipo de arbol: {{item.tipo}}</p>
+      <p>Ancho de copa: {{item.anchoc}}</p>
+      <p>Ancho de tronco: {{item.anchot}}</p>
+      <p>Latitud: {{item.latitud}}</p>
+      <p>Longitud: {{item.longitud}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
